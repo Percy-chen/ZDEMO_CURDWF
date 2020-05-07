@@ -1,0 +1,69 @@
+<mvc:View controllerName="CURDAPPROVAL.controller.App" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" displayBlock="true" busy="{appModel>/isBusy}">
+	<App id="idAppControl">
+		<pages>
+			<Page title="{data>/task/title}" showHeader="false" showFooter="false">
+				<content>
+					<ObjectHeader title="{data>/task/title}" backgroundDesign="Solid">
+						<attributes>
+							<ObjectAttribute title="{i18n>GENERIC_CREATEDON}" text="{path: 'data>/task/createdOn', formatter: '.formatDate'}"/>
+						</attributes>
+						<statuses>
+							<ObjectStatus title="{i18n>GENERIC_STATUS}" text="{data>/task/statusText}"/>
+							<ObjectStatus title="{i18n>GENERIC_PRIORITY}" text="{data>/task/priorityText}"/>
+						</statuses>
+					</ObjectHeader>
+					<!-- Everything starting from here is just an example -->
+					<f:Form editable="true">
+						<f:layout>
+							<f:ResponsiveGridLayout labelSpanL="4" labelSpanM="2" emptySpanL="0" emptySpanM="0" columnsL="4" columnsM="2"/>
+						</f:layout>
+						<f:formContainers>
+							<f:FormContainer>
+								<f:formElements>
+									<f:FormElement label="{i18n>Bname}">
+										<f:fields>
+											<l:HorizontalLayout>
+												<!--<Label text="{i18n>Bname}:" labelFor="Bname" width="4em"/>-->
+												<Text width="8em" fieldWidth="30%" id="Bname" text="{data>/context/Bname}"/>
+											</l:HorizontalLayout>
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="{i18n>NameFirst}">
+										<f:fields>
+											<l:HorizontalLayout>
+												<!--<Label text="{i18n>NameFirst}:" labelFor="NameFirst" width="4em"/>-->
+												<Text width="8em" id="NameFirst" text="{data>/context/NameFirst}"/>
+											</l:HorizontalLayout>
+										</f:fields>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+							<f:FormContainer>
+								<f:formElements>
+									<f:FormElement label="{i18n>NameLast}">
+										<f:fields>
+											<l:HorizontalLayout>
+												<!--<Label text="{i18n>NameLast}:" labelFor="NameLast" width="4em"/>-->
+												<Text width="8em" id="NameLast" text="{data>/context/NameLast}"/>
+											</l:HorizontalLayout>
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="{i18n>NameText}">
+										<f:fields>
+											<l:HorizontalLayout>
+												<!--<Label text="{i18n>NameText}:" labelFor="NameText" width="4em"/>-->
+												<Text width="8em" id="NameText" text="{data>/context/NameText}"/>
+											</l:HorizontalLayout>
+										</f:fields>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+						</f:formContainers>
+					</f:Form>
+					<!-- End of example coding -->
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
